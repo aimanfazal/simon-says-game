@@ -12,12 +12,11 @@ let level = 0;
 
 document.addEventListener("keypress", () => {
     if (start == false) {
-        h1.innerText = "Simon Says";
+        h1.innerHTML = "<span>Simon</span> Says";
         console.log("Let's start the game!");
         start = true;
+        levelUp();
     }
-
-    levelUp();
 })
 
 function btnFlash(btn) {
@@ -53,8 +52,8 @@ function checkAns(idx) {
             setTimeout(levelUp, 500);
     }
     else {
-        h1.innerText = "Game Over!";
-        h3.innerHTML = `Your score was <b>${level}</b> <br>Press any key to start over.`;
+        h1.innerHTML = "Game Over!";
+        h3.innerHTML = `Your score was <b>${level - 1}</b> <br>Press any key to start over.`;
         let body = document.querySelector("body");
         body.classList.add("gameOver");
         setTimeout(() => {
@@ -65,12 +64,14 @@ function checkAns(idx) {
 }
 
 function btnPess() {
-    let btn = this;
-    userFlash(btn);
-    userColor = btn.getAttribute("id");
-    userSeq.push(userColor);
+    if (start) {
+        let btn = this;
+        userFlash(btn);
+        userColor = btn.getAttribute("id");
+        userSeq.push(userColor);
 
-    checkAns(userSeq.length - 1);
+        checkAns(userSeq.length - 1);
+    }
 }
 
 let btns = document.querySelectorAll(".btn");
@@ -82,9 +83,9 @@ function reset() {
     start = false;
     userSeq = [];
     gameSeq = [];
-    if (level > highscore){
-        highscore = level;
-        h2.innerText = "Current Highscore = " + highscore;
+    if (level - 1 > highscore){
+        highscore = level - 1;
+        document.getElementById("current-highscore").innerText = highscore;
     }
     level = 0;
 }
