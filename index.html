@@ -4,27 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Simon Says</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Simon Says</h1>
+    <h1><span>Simon</span> Says</h1>
     <h3>Press any key to start the game</h3>
 
-    <div class="box-container">
+    <div class="game-container">
+        <div class="box-container">
 
-        <div class="rowA">
-            <div class="btn bA" type="button" id="bA"></div>
-            <div class="btn bB" type="button" id="bB"></div>
+            <div class="rowA">
+                <div class="btn bA" type="button" id="bA"></div>
+                <div class="btn bB" type="button" id="bB"></div>
+            </div>
+            <div class="rowB">
+                <div class="btn bC" type="button" id="bC"></div>
+                <div class="btn bD" type="button" id="bD"></div>
+            </div>
         </div>
-        <div class="rowB">
-            <div class="btn bC" type="button" id="bC"></div>
-            <div class="btn bD" type="button" id="bD"></div>
-        </div>
+
+        <h2>Highscore: <span id="current-highscore">0</span></h2>
     </div>
 
-    <h2>Highscore = 0</h2>
 
     <script src="app.js"></script>
 </body>
