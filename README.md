@@ -1,4 +1,6 @@
-**Simon Says Game -** A modern and visually appealing recreation of the classic "Simon Says" memory game. This project challenges players to remember and replicate a growing sequence of colored button flashes.
+# Simon Says Game
+
+A modern and visually appealing recreation of the classic "Simon Says" memory game. This project challenges players to remember and replicate a growing sequence of colored button flashes.
 
 **_Features_**
 
